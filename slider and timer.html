@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>TIME_SLIDER</title>
+<script>
+var i=0;
+var image=[];
+image[0]="1.jpg";
+image[1]="2.jpg";
+image[2]="3.jpg";
+image[3]="4.jpg";
+
+window.onload=changee;
+
+function changee()
+{
+	document.getElementById("pic1").src=image[i];
+	if(i<(image.length)-1)
+    {
+		i++;
+	}
+	else
+	{
+		i=0;
+	}
+	setInterval(changee,4000);
+}
+
+function changee1()
+{
+	var a=document.getElementById("pic1");
+	if(a.src.match("1.jpg"))
+    {
+		a.src="2.jpg";
+	}
+	else if(a.src.match("2.jpg"))
+	{
+		a.src="3.jpg";
+	}
+	else if(a.src.match("3.jpg"))
+	{
+		a.src="4.jpg";
+	}
+	else
+	{
+		a.src="1.jpg";
+	}
+}
+</script>
+</head>
+
+<body>
+
+	<img id="pic1" src="1.jpg" width="400" height="250"/><br />
+	<input type="radio" onclick="changee1()"/>CHANGE PIC
+
+</body>
+</html>
